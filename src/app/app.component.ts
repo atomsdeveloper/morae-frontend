@@ -1,12 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { state, reset } from './app.actions';
+import { AppState } from './app.state';
+import { getState } from './app.selector';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <h1>{{ state$ | async }}</h1>
+    <button (click)="onState()">State</button>
+    <button (click)="onReset()">Reset</button>
+  `,
 })
 export class AppComponent {
-  title = 'frontend';
+  public state$: Observable<AppState>;
+
+  constructor(private store: Store<{ state: AppState }>) {
+    this.state$ = this.store.select(getState);
+  }
+
+  onState() {
+    this.store.dispatch(state());
+  }
+
+  onReset() {
+    this.store.dispatch(reset());
+  }
 }
