@@ -10,19 +10,19 @@ import { AppState } from './app.state';
 import { getState } from './app.selector';
 
 // Components
-import { ShareComponent } from './components/share/share.component';
+import { SearchComponent } from './components/search/search.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ShareComponent],
+  imports: [CommonModule, SearchComponent],
   template: `
-    <div>
-      <h1 class="text">Olá Mundo</h1>
-
-      <!-- Component Share -->
-      <app-share />
-    </div>
+    <!-- Component Share -->
+    <main>
+      <div class="app">
+        <app-search />
+      </div>
+    </main>
     <!-- <h1>{{ state$ | async }}</h1>
     <button (click)="onState()">State</button>
     <button (click)="onReset()">Reset</button> -->
