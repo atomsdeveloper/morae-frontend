@@ -1,0 +1,48 @@
+header {
+  /* background: var(--color-background); */
+  backdrop-filter: blur(24px);
+  /* box-shadow: var(--box-shadow-app); */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  /* color: aliceblue; */
+}
+
+@media (max-width: 480px) {
+  header {
+    top: unset;
+    bottom: 0;
+    /* box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); */
+  }
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-base);
+  padding: var(--spacing-base) var(--spacing-small) var(--spacing-base)
+    var(--spacing-small);
+}
+
+header > div.is-mobile {
+  justify-content: center;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 30rem) {
+  header > div {
+    gap: 0.188rem;
+  }
+
+  header a {
+    display: none;
+  }
+}
