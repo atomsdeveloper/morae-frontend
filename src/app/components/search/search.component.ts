@@ -19,7 +19,6 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
         placeholder="Enter Address, rooms or price... "
       />
     </section>
-    <p>Teste</p>
   `,
   styleUrls: ['./search.component.css'],
 })

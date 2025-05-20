@@ -13,7 +13,7 @@ section {
 }
 
 .icon-search {
-  width: 50px;
+  width: 70px;
 
   font-size: 16px;
 
@@ -34,7 +34,7 @@ input {
 
 input::placeholder {
   color: #999;
-  font-size: 14.2px;
+  font-size: var(--font-size-h6);
   font-family: Montserrat;
 }
 
