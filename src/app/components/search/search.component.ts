@@ -7,20 +7,21 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search',
+  standalone: true,
   imports: [FontAwesomeModule],
   template: `
-    <div class="container-search">
+    <section>
       <fa-icon class="icon-search" [icon]="faMagnifyingGlass" />
       <input
         type="text"
         name="share"
         id="share"
         placeholder="Enter Address, rooms or price... "
-        class="input-search"
       />
-    </div>
+    </section>
+    <p>Teste</p>
   `,
-  styleUrl: './search.component.css',
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
   faMagnifyingGlass = faMagnifyingGlass;
