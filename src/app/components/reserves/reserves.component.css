@@ -1,0 +1,55 @@
+section {
+  width: 100%;
+  height: 100%;
+
+  margin-top: 1.85rem;
+}
+
+section > div {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section > div > p {
+  text-align: center;
+}
+
+section > div:nth-of-type(2) {
+  margin-top: 1rem;
+}
+
+section > div:nth-of-type(2) ul {
+  list-style: none;
+  padding: 1.85rem;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+section > div:nth-of-type(2) ul > li {
+  width: calc(49% - 0.5rem); /* dois por linha, com gap */
+  background-color: var(--color-background);
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  box-shadow: var(--box-shadow-app);
+}
+
+section > div:nth-of-type(2) ul > li > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .reserve-item {
+    flex: 1 1 100%; /* ocupa 100% da largura */
+  }
+}
