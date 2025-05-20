@@ -5,23 +5,26 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 // State
-import { state, reset } from './app.actions';
-import { AppState } from './app.state';
-import { getState } from './app.selector';
+import { state, reset } from './state/app.actions';
+import { AppState } from './state/app.state';
+import { getState } from './state/app.selector';
 
 // Components
+import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
+import { ReservesComponent } from './components/reserves/reserves.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SearchComponent],
+  imports: [CommonModule, HeaderComponent, SearchComponent, ReservesComponent],
   template: `
-    <!-- Component Share -->
+    <app-header />
     <main>
-      <div class="app">
+      <!-- <div class="app">
         <app-search />
-      </div>
+        <app-reserves />
+      </div> -->
     </main>
     <!-- <h1>{{ state$ | async }}</h1>
     <button (click)="onState()">State</button>
