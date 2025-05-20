@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 // State
 import { StoreModule } from '@ngrx/store';
-import { AppReducer } from './app.reducer';
+import { AppReducer } from './state/app.reducer';
 
 @NgModule({
   imports: [
